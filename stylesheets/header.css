@@ -40,6 +40,13 @@ header:before {
   z-index: -1;
 }
 
+/* Pause all animations until document has loaded and js-loading class has been removed  */
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+
 header:after {
   animation: rotate-up 1.2s .5s cubic-bezier(0, .5, 0, 1) forwards;
   background: #F9FCFF;
@@ -111,7 +118,7 @@ header:after {
 
 /* Animations */
 
-@-webkit-keyframes fade-slide-down {
+@keyframes fade-slide-down {
   0% {
     opacity: 0;
     -webkit-transform: translateY(-4rem);
